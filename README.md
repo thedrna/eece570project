@@ -46,14 +46,14 @@ pip install -r requirements.txt
 
 ### Dataset Creation
 
-To recreate the COCO dataset subset:
-First run:
+To recreate the COCO dataset subset, first run:
 
 ```bash
 mkdir -p coco_data/annotations
 wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
 unzip annotations_trainval2017.zip -d coco_data/
 ```
+
 To download the 2017 COCO val set annotations and URLs, then run:
 
 ```bash
@@ -75,6 +75,7 @@ To extract embeddings from generated images:
 ```bash
 python scripts/generated_images_embedding_extraction.py
 ```
+
 These will extract both DINO and CLIP embeddings of dataset and generated images.
 
 ### Image Generation
