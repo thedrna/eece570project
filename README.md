@@ -1,6 +1,6 @@
 # Zero-Shot Image Retrieval Using Vision-Language Models
 
-This project implements a zero-shot image retrieval system using state-of-the-art vision-language models (CLIP and DINO). The system compares generated images against a dataset of reference images to find visual similarities without requiring explicit training on the target dataset.
+This project implements a zero-shot image retrieval system using CLIP and DINO. The system compares generated images with Stable Diffusion against a dataset of reference images to find visual similarities without requiring explicit training on the target dataset.
 
 ## Project Structure
 
@@ -12,7 +12,7 @@ This project implements a zero-shot image retrieval system using state-of-the-ar
   - `v1-5/`: Images generated using Stable Diffusion v1.5
   - `v2-1/`: Images generated using Stable Diffusion v2.1
 - `scripts/`: Python scripts for dataset creation, embedding extraction, and similarity analysis
-- `coco_data/`: (Temporary) Original COCO dataset annotations
+- `notebooks`: Python notebook for generating images
 
 ### Scripts
 
@@ -20,6 +20,7 @@ This project implements a zero-shot image retrieval system using state-of-the-ar
 - `dataset_embedding_extraction.py`: Extracts CLIP and DINO embeddings from the dataset images
 - `generated_images_embedding_extraction.py`: Extracts embeddings from AI-generated images
 - `utils.py`: Contains utility functions for embedding extraction and similarity calculation
+- `text-to-image.ipynb`: Python notebook for generating images from prompts using SD 1-5 and SD 2-1
 
 ### Other Files
 
@@ -45,7 +46,15 @@ pip install -r requirements.txt
 
 ### Dataset Creation
 
-To create the COCO dataset subset:
+To recreate the COCO dataset subset:
+First run:
+
+```bash
+mkdir -p coco_data/annotations
+wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+unzip annotations_trainval2017.zip -d coco_data/
+```
+To download the 2017 COCO val set annotations and URLs, then run:
 
 ```bash
 python scripts/dataset_creation.py
@@ -66,13 +75,17 @@ To extract embeddings from generated images:
 ```bash
 python scripts/generated_images_embedding_extraction.py
 ```
+These will extract both DINO and CLIP embeddings of dataset and generated images.
 
 ### Image Generation
 
-Images can be generated using Stable Diffusion models with the prompts provided in `prompts.txt`. The generated images should be placed in their respective directories:
+Simply run `text-to-image.ipynb` notebook using Jupyter Notebook or Google Colab (for better GPU access).
+Images can be generated using Stable Diffusion models with the prompts provided in `prompts.txt`, or even by writing new prompts. The generated images should be placed in their respective directories:
 
 - `generated_images/v1-5/` for Stable Diffusion v1.5 images
 - `generated_images/v2-1/` for Stable Diffusion v2.1 images
+
+After generating images, remember to generate their embedding as well.
 
 ## Acknowledgements
 
