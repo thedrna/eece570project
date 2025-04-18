@@ -1,0 +1,27 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=9.0.0
+numpy>=1.22.0
+requests>=2.28.0
+tqdm>=4.64.0
+
+# CLIP model
+git+https://github.com/openai/CLIP.git
+
+# DINO model
+transformers>=4.26.0
+
+# Diffusion models
+diffusers>=0.14.0
+accelerate>=0.18.0
+
+# COCO dataset handling
+pycocotools>=2.0.6
+
+# Jupyter notebook support
+jupyter>=1.0.0
+notebook>=6.5.0
+
+# Optional: for Mac MPS acceleration
+# torch with MPS support is included in the main torch package
