@@ -26,6 +26,7 @@ This project implements a zero-shot image retrieval system using CLIP and DINO. 
 
 - `prompts.txt`: Text prompts used to generate images with Stable Diffusion
 - `requirements.txt`: Required Python packages for the project
+- `Results.xlsx`: Manual evaluation of retrived results
 
 ## Setup and Usage
 
