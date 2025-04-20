@@ -88,12 +88,3 @@ Images can be generated using Stable Diffusion models with the prompts provided 
 - `generated_images/v2-1/` for Stable Diffusion v2.1 images
 
 After generating images, remember to generate their embedding as well.
-
-## Acknowledgements
-
-This project uses models and techniques from:
-
-- [CLIP](https://github.com/openai/CLIP) by OpenAI
-- [DINO v2](https://github.com/facebookresearch/dinov2) by Facebook Research
-- [COCO Dataset](https://cocodataset.org/)
-- [Stable Diffusion](https://stability.ai/) by Stability AI
